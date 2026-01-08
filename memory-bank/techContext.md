@@ -1,35 +1,83 @@
 # Technical Context
 
 ## Technology Stack
-- **Language**: JavaScript (ES6+)
-- **Platform**: Tampermonkey browser extension
-- **Target**: Amazon Prime Video web player
-- **Browser**: Chrome (primary), should work in Firefox with Greasemonkey
 
-## Key Technologies
+### Shell Script: setup-memory-bank.sh
+A bash script utility for project scaffolding.
 
-### Tampermonkey
-- Userscript manager for browsers
-- Allows custom JavaScript injection on web pages
-- Uses special metadata headers for configuration
+**Language**: Bash  
+**Size**: 1510 lines  
+**Dependencies**: None (standard Unix tools)
 
-### Fullscreen API
-- `document.fullscreenElement` - detects fullscreen state
-- `fullscreenchange` event - monitors fullscreen transitions
+#### Key Bash Features Used
+- Heredocs (`<< 'EOF'`) for multi-line file creation
+- Color escape codes for terminal output
+- Argument validation (`$1`, `-z`)
+- Directory existence checks (`-d`)
+- `set -e` for fail-fast execution
 
-### CSS Transforms
-- `object-fit: contain` - maintains aspect ratio
-- `transform: scale()` - scales video element
-- `width/height: 100%` - fills container
+### Userscript: amazon-fullscreen-enhancer.user.js
+A Tampermonkey userscript for Amazon Prime Video.
+
+**Runtime**: Tampermonkey/Greasemonkey  
+**Language**: JavaScript (ES6+)  
+**APIs Used**:
+- `GM_addStyle` - CSS injection
+- Fullscreen API - Browser fullscreen detection
+- MutationObserver - Dynamic DOM monitoring
 
 ## Development Environment
-- Workspace: `/Users/michaeljones/git/amazon-userscript`
-- Testing: Chrome browser with Tampermonkey installed
 
-## Technical Constraints
-- Must work within Tampermonkey's sandbox
-- Cannot modify Amazon's server-side code
-- Must handle dynamic DOM changes (React/SPA)
+### Requirements
+- Bash shell (macOS/Linux/WSL)
+- Text editor or IDE
+- Browser with Tampermonkey extension (for userscript)
+
+### Project Structure
+```
+amazon-userscript/
+├── setup-memory-bank.sh          # Project scaffolding tool
+├── amazon-fullscreen-enhancer.user.js  # Browser userscript
+├── memory-bank/                  # Documentation hub
+│   ├── tasks.md
+│   ├── activeContext.md
+│   ├── progress.md
+│   ├── projectbrief.md
+│   ├── productContext.md
+│   ├── systemPatterns.md
+│   ├── techContext.md
+│   ├── style-guide.md
+│   ├── creative/
+│   ├── reflection/
+│   └── archive/
+├── README.md
+└── .gitignore
+```
+
+## Build Process
+
+### setup-memory-bank.sh
+No build required - executable bash script.
+```bash
+chmod +x setup-memory-bank.sh
+./setup-memory-bank.sh <project-name>
+```
+
+### Userscript
+No build required - installed directly in Tampermonkey.
+
+## Testing
+
+### Shell Script Testing
+- Run with test project name
+- Verify all files created correctly
+- Test on different shells (bash, zsh)
+
+### Userscript Testing
+- Install in Tampermonkey
+- Navigate to Amazon Prime Video
+- Enter fullscreen mode
+- Verify video fills screen
 
 ---
 

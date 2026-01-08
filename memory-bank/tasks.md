@@ -1,42 +1,52 @@
 # Active Tasks
 
 ## Current Task
-
-## Task: Amazon Prime Video Fullscreen Enhancer
-**Task ID**: TASK-2026-01-07-AMAZON-FULLSCREEN
-**Complexity**: Level 2 (Simple Enhancement)
-**Status**: In Progress
-
-### Description
-Create a Tampermonkey userscript that makes the Amazon Prime Video player fill the available screen space when in browser fullscreen mode, while maintaining the video's aspect ratio.
-
-### Problem Statement
-When using browser fullscreen mode on Amazon Prime Video, the video player appears small and doesn't utilize the full screen space, resulting in excessive black bars or letterboxing.
-
-### Acceptance Criteria
-- [ ] Userscript installs correctly in Tampermonkey
-- [ ] Video fills available screen space in fullscreen mode
-- [ ] Aspect ratio is maintained (no stretching/distortion)
-- [ ] Works on Amazon Prime Video watch pages
-- [ ] No interference with normal playback controls
-
-### Implementation Checklist
-- [ ] Create userscript with proper Tampermonkey headers
-- [ ] Implement fullscreen detection
-- [ ] Apply CSS scaling to video element
-- [ ] Test on Amazon Prime Video
-- [ ] Document installation instructions
-
-### Files to Create
-- `amazon-fullscreen-enhancer.user.js` - Main userscript file
-
-### Notes
-- Need to inspect Amazon's video player DOM structure
-- May need to handle different video container elements
-- Should work with both movies and TV shows
+*No active task. Use VAN mode to initialize a new task.*
 
 ## Task Queue
-*No additional tasks queued.*
+*Tasks waiting to be processed.*
+
+---
+
+## Archived Tasks
+
+| Task ID | Description | Archived |
+|---------|-------------|----------|
+| TASK-2026-01-07-AMAZON-FULLSCREEN | Amazon Prime Video Fullscreen Enhancer | 2026-01-07 |
+| TASK-2026-01-07-SHELL-SCRIPT-DOCS | setup-memory-bank.sh Documentation | 2026-01-07 |
+
+**Archive Location**: `memory-bank/archive/archive-2026-01-07-amazon-userscript.md`
+
+---
+
+## Task Template
+
+When starting a new task, use this format:
+
+```markdown
+## Task: [Task Name]
+**Task ID**: TASK-YYYY-MM-DD-DESCRIPTION
+**Complexity**: Level [1-4]
+**Status**: [Not Started | In Progress | Complete]
+
+### Description
+[Brief description of the task]
+
+### Acceptance Criteria
+- [ ] Criterion 1
+- [ ] Criterion 2
+
+### Implementation Checklist
+- [ ] Step 1
+- [ ] Step 2
+
+### Files to Modify
+- `path/to/file1`
+- `path/to/file2`
+
+### Notes
+[Any additional notes]
+```
 
 ---
 
