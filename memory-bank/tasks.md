@@ -1,7 +1,31 @@
 # Active Tasks
 
 ## Current Task
-*No active task. Use VAN mode to initialize a new task.*
+## Task: Add Human Command Payload Metadata
+**Task ID**: TASK-2026-05-27-HUMAN-COMMAND-PAYLOAD
+**Complexity**: Level 1
+**Status**: Complete
+
+### Description
+Add metadata to `.cursor/commands/human.md` so the Human Writing Mode command is included in the command payload.
+
+### Acceptance Criteria
+- [x] `.cursor/commands/human.md` has command frontmatter.
+- [x] Command description explains when to use Human Writing Mode.
+- [x] `setup-memory-bank.sh` creates the `/human` command in new projects.
+
+### Implementation Checklist
+- [x] Inspect existing command metadata patterns.
+- [x] Add `name` and `description` frontmatter to `human.md`.
+- [x] Add the Human command payload to `setup-memory-bank.sh`.
+- [x] Update generated README and completion output to list `/human`.
+
+### Files Modified
+- `.cursor/commands/human.md`
+- `setup-memory-bank.sh`
+
+### Notes
+VAN classified this as a Level 1 quick command metadata update. Follow-up included updating the scaffolding script so future projects receive the command.
 
 ## Task Queue
 *Tasks waiting to be processed.*
