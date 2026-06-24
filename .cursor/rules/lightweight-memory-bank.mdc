@@ -1,0 +1,46 @@
+---
+description: Lightweight Memory Bank guidance for every prompt
+alwaysApply: true
+---
+
+# Lightweight Memory Bank
+
+Use `memory-bank/` as persistent project memory across sessions. Before meaningful work, read only the memory files that are relevant to the request. During work, update memory only when it captures durable context future agents will need.
+
+## Core Files
+
+- `memory-bank/tasks.md`: current task, plan, checklist, and status
+- `memory-bank/activeContext.md`: current focus and next steps
+- `memory-bank/progress.md`: implementation progress and notable outcomes
+- `memory-bank/projectbrief.md`: project purpose and scope
+- `memory-bank/productContext.md`: product goals and user-facing requirements
+- `memory-bank/systemPatterns.md`: architecture and recurring patterns
+- `memory-bank/techContext.md`: stack, tools, setup, and constraints
+
+## Workflow
+
+1. Understand the task and check relevant memory.
+2. Plan only as much as the task complexity requires.
+3. Implement in small, focused steps.
+4. Verify with appropriate tests or checks.
+5. Update memory with durable outcomes.
+6. Archive or summarize completed work when useful.
+
+## Custom Memory Bank Commands
+
+This project also includes custom Memory Bank commands in `.cursor/commands/`. Be aware of them and suggest or follow them when the user asks for a structured Memory Bank workflow:
+
+- `/van`: initialize the task, verify Memory Bank state, determine complexity, and route next steps
+- `/plan`: create a complexity-appropriate implementation plan
+- `/creative`: explore design, architecture, algorithm, or UI/UX options when decisions are needed
+- `/implement`: build planned changes and update task progress
+- `/reflect`: review completed work, capture lessons, and archive when requested
+
+For ordinary prompts, keep using the lightweight workflow above. For larger, ambiguous, or multi-phase work, mention the relevant command and align Memory Bank updates with that phase.
+
+## Guardrails
+
+- Keep memory lightweight; do not over-document trivial changes.
+- Do not create unnecessary Memory Bank files.
+- Do not rewrite memory unless it improves future context.
+- Store core Memory Bank files only under `memory-bank/`.
